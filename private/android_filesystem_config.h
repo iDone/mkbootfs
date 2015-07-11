@@ -132,8 +132,8 @@
 #define AID_QCOM_ONCRPC   3011  /* can read/write /dev/oncrpc files */
 #define AID_QCOM_DIAG     3012  /* can read/write /dev/diag */
 #else
+#define AID_SENSORS       3011  /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
 #define AID_IMS           3012  /* can read/write /dev/socket/imsrtp */
-#define AID_SENSORS       3013 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
 #define AID_RFS           3014  /* Remote Filesystem for peripheral processors */
 #define AID_RFS_SHARED    3015  /* Shared files for Remote Filesystem for peripheral processors  */
 #endif
