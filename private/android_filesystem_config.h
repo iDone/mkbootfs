@@ -78,6 +78,7 @@
 #define AID_SDCARD_ALL    1035  /* access all users external storage */
 #define AID_LOGD          1036  /* log daemon */
 #define AID_SHARED_RELRO  1037  /* creator of shared GNU RELRO files */
+#define AID_DBUS          1038  /* dbus-daemon IPC broker process */
 
 #define AID_AUDIT         1049  /* audit daemon */
 
@@ -194,6 +195,7 @@ static const struct android_id_info android_ids[] = {
     { "sdcard_all",    AID_SDCARD_ALL, },
     { "logd",          AID_LOGD, },
     { "shared_relro",  AID_SHARED_RELRO, },
+    { "dbus",          AID_DBUS, },
 
     { "audit",         AID_AUDIT, },
 
@@ -334,7 +336,7 @@ static const struct fs_path_config android_files[] = {
 };
 
 static inline void fs_config(const char *path, int dir,
-                             unsigned *uid, unsigned *gid, unsigned *mode, uint64_t *capabilities)
+                             long unsigned *uid, long unsigned *gid, unsigned *mode, uint64_t *capabilities)
 {
     const struct fs_path_config *pc;
     int plen;
