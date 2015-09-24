@@ -27,7 +27,7 @@
 #include <sys/types.h>
 #include <stdint.h>
 
-#if defined(__ANDROID__)
+#ifdef HAVE_ANDROID_OS
 #include <linux/capability.h>
 #else
 #include "android_filesystem_capability.h"
@@ -82,6 +82,7 @@
 #define AID_SHARED_RELRO  1037  /* creator of shared GNU RELRO files */
 #define AID_DBUS          1038  /* dbus-daemon IPC broker process */
 #define AID_TLSDATE       1039  /* tlsdate unprivileged user */
+#define AID_MEDIA_EX      1040  /* mediaextractor process */
 
 #define AID_AUDIT         1049  /* audit daemon */
 
@@ -204,6 +205,7 @@ static const struct android_id_info android_ids[] = {
     { "shared_relro",  AID_SHARED_RELRO, },
     { "dbus",          AID_DBUS, },
     { "tlsdate",       AID_TLSDATE, },
+    { "mediaex",       AID_MEDIA_EX, },
 
     { "audit",         AID_AUDIT, },
 
@@ -349,7 +351,7 @@ static const struct fs_path_config android_files[] = {
 };
 
 static inline void fs_config(const char *path, int dir,
-                             unsigned *uid, unsigned *gid, unsigned *mode, uint64_t *capabilities)
+                             long unsigned *uid, long unsigned *gid, unsigned *mode, uint64_t *capabilities)
 {
     const struct fs_path_config *pc;
     int plen;
