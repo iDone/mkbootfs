@@ -331,6 +331,8 @@ static const struct fs_path_config android_files[] = {
     { 00750, AID_ROOT,      AID_SHELL,     CAP_MASK_LONG(CAP_SETUID) | CAP_MASK_LONG(CAP_SETGID), "system/bin/run-as" },
     { 00700, AID_SYSTEM,    AID_SHELL,     CAP_MASK_LONG(CAP_BLOCK_SUSPEND), "system/bin/inputflinger" },
 
+    { 00750, AID_ROOT,      AID_ROOT,      0, "system/bin/uncrypt" },
+    { 00750, AID_ROOT,      AID_ROOT,      0, "system/bin/install-recovery.sh" },
     { 00755, AID_ROOT,      AID_SHELL,     0, "system/bin/*" },
     { 00755, AID_ROOT,      AID_SHELL,     0, "system/etc/init.d/*" },
     { 00755, AID_ROOT,      AID_ROOT,      0, "system/lib/valgrind/*" },
@@ -344,7 +346,6 @@ static const struct fs_path_config android_files[] = {
     { 00750, AID_ROOT,      AID_SHELL,     0, "charger*" },
     { 00750, AID_ROOT,      AID_SHELL,     0, "sbin/fs_mgr" },
     { 00640, AID_ROOT,      AID_SHELL,     0, "fstab.*" },
-    { 00755, AID_ROOT,      AID_SHELL,     0, "system/etc/init.d/*" },
     { 00644, AID_ROOT,      AID_ROOT,      0, 0 },
 };
 
