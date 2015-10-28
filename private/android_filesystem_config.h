@@ -87,8 +87,6 @@
 #define AID_METRICS_COLL  1042  /* metrics_collector process */
 #define AID_METRICSD      1043  /* metricsd process */
 #define AID_WEBSERV       1044  /* webservd process */
-#define AID_DEBUGGERD     1045  /* debuggerd unprivileged user */
-#define AID_MEDIA_CODEC   1046  /* mediacodec process */
 
 #define AID_AUDIT         1049  /* audit daemon */
 
@@ -216,8 +214,6 @@ static const struct android_id_info android_ids[] = {
     { "metrics_coll",  AID_METRICS_COLL },
     { "metricsd",      AID_METRICSD },
     { "webserv",       AID_WEBSERV },
-    { "debuggerd",     AID_DEBUGGERD, },
-    { "mediacodec",    AID_MEDIA_CODEC, },
 
     { "audit",         AID_AUDIT, },
 
@@ -331,6 +327,8 @@ static const struct fs_path_config android_files[] = {
     { 00644, AID_MEDIA_RW,  AID_MEDIA_RW,  0, "data/media/*" },
     { 00644, AID_SYSTEM,    AID_SYSTEM,    0, "data/app-private/*" },
     { 00644, AID_APP,       AID_APP,       0, "data/data/*" },
+    { 00750, AID_ROOT,      AID_SHELL,     0, "data/nativetest/*" },
+    { 00750, AID_ROOT,      AID_SHELL,     0, "data/nativetest64/*" },
 
     /* CM's daemonized su doesn't need the setuid bit */
     { 00755, AID_ROOT,      AID_SHELL,     0, "system/xbin/su" },
