@@ -87,6 +87,7 @@
 #define AID_METRICS_COLL  1042  /* metrics_collector process */
 #define AID_METRICSD      1043  /* metricsd process */
 #define AID_WEBSERV       1044  /* webservd process */
+#define AID_DEBUGGERD     1045  /* debuggerd unprivileged user */
 
 #define AID_AUDIT         1049  /* audit daemon */
 
@@ -214,6 +215,7 @@ static const struct android_id_info android_ids[] = {
     { "metrics_coll",  AID_METRICS_COLL },
     { "metricsd",      AID_METRICSD },
     { "webserv",       AID_WEBSERV },
+    { "debuggerd",     AID_DEBUGGERD, },
 
     { "audit",         AID_AUDIT, },
 
