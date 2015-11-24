@@ -112,6 +112,7 @@
 #define AID_NET_BW_ACCT   3007  /* change bandwidth statistics accounting */
 #define AID_NET_BT_STACK  3008  /* bluetooth: access config files */
 #define AID_READPROC      3009  /* Allow /proc read access */
+#define AID_WAKELOCK      3010  /* Allow system wakelock read/write access */
 #if defined(QCOM_LEGACY_UIDS)
 #define AID_QCOM_ONCRPC   3011  /* can read/write /dev/oncrpc files */
 #define AID_QCOM_DIAG     3012  /* can read/write /dev/diag */
@@ -231,6 +232,7 @@ static const struct android_id_info android_ids[] = {
     { "net_bw_acct",   AID_NET_BW_ACCT, },
     { "net_bt_stack",  AID_NET_BT_STACK, },
     { "readproc",      AID_READPROC, },
+    { "wakelock",      AID_WAKELOCK, },
     { "qcom_diag", AID_QCOM_DIAG, },
 #if !defined(QCOM_LEGACY_UIDS)
     { "ims", AID_IMS, },
