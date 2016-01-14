@@ -90,6 +90,8 @@
 #define AID_DEBUGGERD     1045  /* debuggerd unprivileged user */
 #define AID_MEDIA_CODEC   1046  /* mediacodec process */
 #define AID_CAMERASERVER  1047  /* cameraserver process */
+#define AID_FIREWALL      1048  /* firewalld process */
+#define AID_TRUNKS        1049  /* trunksd process (TPM daemon) */
 
 #define AID_AUDIT         1049  /* audit daemon */
 
@@ -222,6 +224,8 @@ static const struct android_id_info android_ids[] = {
     { "debuggerd",     AID_DEBUGGERD, },
     { "mediacodec",    AID_MEDIA_CODEC, },
     { "cameraserver",  AID_CAMERASERVER, },
+    { "firewall",      AID_FIREWALL, },
+    { "trunks",        AID_TRUNKS, },
 
     { "audit",         AID_AUDIT, },
 
