@@ -112,14 +112,14 @@
 #define AID_NET_BW_ACCT   3007  /* change bandwidth statistics accounting */
 #define AID_NET_BT_STACK  3008  /* bluetooth: access config files */
 #if defined(QCOM_LEGACY_UIDS)
-#define AID_QCOM_ONCRPC   3009  /* can read/write /dev/oncrpc files */
-#define AID_QCOM_DIAG     3010  /* can read/write /dev/diag */
+#define AID_QCOM_ONCRPC   3011  /* can read/write /dev/oncrpc files */
+#define AID_QCOM_DIAG     3012  /* can read/write /dev/diag */
 #else
-#define AID_QCOM_DIAG     3009  /* can read/write /dev/diag */
-#define AID_IMS           3010  /* can read/write /dev/socket/imsrtp */
-#define AID_SENSORS       3011 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
-#define AID_RFS           3012  /* Remote Filesystem for peripheral processors */
-#define AID_RFS_SHARED    3013  /* Shared files for Remote Filesystem for peripheral processors  */
+#define AID_QCOM_DIAG     3011  /* can read/write /dev/diag */
+#define AID_IMS           3012  /* can read/write /dev/socket/imsrtp */
+#define AID_SENSORS       3013 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
+#define AID_RFS           3014  /* Remote Filesystem for peripheral processors */
+#define AID_RFS_SHARED    3015  /* Shared files for Remote Filesystem for peripheral processors  */
 #endif
 
 /* The range 5000-5999 is also reserved for OEM, and must never be used here. */
