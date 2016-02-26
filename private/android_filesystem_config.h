@@ -320,6 +320,11 @@ static const struct fs_path_config android_dirs[] = {
 ** and will allow partial matches.
 */
 static const struct fs_path_config android_files[] = {
+    /* Motorola ramdisk special files */
+    { 00755, AID_ROOT,      AID_ROOT,      0, "init.class_main.sh" },
+    { 00400, AID_ROOT,      AID_ROOT,      0, "module_hashes" },
+    { 00750, AID_ROOT,      AID_ROOT,      0, "xbin/qe" },
+
     { 00440, AID_ROOT,      AID_SHELL,     0, "system/etc/init.goldfish.rc" },
     { 00550, AID_ROOT,      AID_SHELL,     0, "system/etc/init.goldfish.sh" },
     { 00550, AID_ROOT,      AID_SHELL,     0, "system/etc/init.ril" },
