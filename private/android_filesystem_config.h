@@ -109,6 +109,11 @@
 /* The range 2900-2999 is reserved for OEM, and must never be
  * used here */
 #define AID_OEM_RESERVED_START 2900
+
+#if !defined(QCOM_LEGACY_UIDS)
+#define AID_QCOM_DIAG          2950  /* access to QTI diagnostic resources */
+#endif
+
 #define AID_OEM_RESERVED_END   2999
 
 /* The 3000 series are intended for use as supplemental group id's only.
@@ -127,7 +132,6 @@
 #define AID_QCOM_ONCRPC   3011  /* can read/write /dev/oncrpc files */
 #define AID_QCOM_DIAG     3012  /* can read/write /dev/diag */
 #else
-#define AID_QCOM_DIAG     3011  /* can read/write /dev/diag */
 #define AID_IMS           3012  /* can read/write /dev/socket/imsrtp */
 #define AID_SENSORS       3013 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
 #define AID_RFS           3014  /* Remote Filesystem for peripheral processors */
@@ -241,6 +245,8 @@ static const struct android_id_info android_ids[] = {
     { "cache",         AID_CACHE, },
     { "diag",          AID_DIAG, },
 
+    { "qcom_diag",     AID_QCOM_DIAG, },
+
     { "net_bt_admin",  AID_NET_BT_ADMIN, },
     { "net_bt",        AID_NET_BT, },
     { "inet",          AID_INET, },
@@ -251,7 +257,6 @@ static const struct android_id_info android_ids[] = {
     { "net_bt_stack",  AID_NET_BT_STACK, },
     { "readproc",      AID_READPROC, },
     { "wakelock",      AID_WAKELOCK, },
-    { "qcom_diag", AID_QCOM_DIAG, },
 #if !defined(QCOM_LEGACY_UIDS)
     { "ims", AID_IMS, },
 #endif
