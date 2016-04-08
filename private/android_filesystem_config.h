@@ -205,131 +205,15 @@
 #define AID_SHARED_GID_START 50000 /* start of gids for apps in each user to share */
 #define AID_SHARED_GID_END   59999 /* start of gids for apps in each user to share */
 
+/*
+ * android_ids has moved to pwd/grp functionality.
+ * If you need to add one, the structure is now
+ * auto-generated based on the AID_ constraints
+ * documented at the top of this header file.
+ * Also see build/tools/fs_config for more details.
+ */
+
 #if !defined(EXCLUDE_FS_CONFIG_STRUCTURES)
-struct android_id_info {
-    const char *name;
-    unsigned aid;
-};
-
-static const struct android_id_info android_ids[] = {
-    { "root",          AID_ROOT, },
-
-    { "system",        AID_SYSTEM, },
-
-    { "radio",         AID_RADIO, },
-    { "bluetooth",     AID_BLUETOOTH, },
-    { "graphics",      AID_GRAPHICS, },
-    { "input",         AID_INPUT, },
-    { "audio",         AID_AUDIO, },
-    { "camera",        AID_CAMERA, },
-    { "log",           AID_LOG, },
-    { "compass",       AID_COMPASS, },
-    { "mount",         AID_MOUNT, },
-    { "wifi",          AID_WIFI, },
-    { "adb",           AID_ADB, },
-    { "install",       AID_INSTALL, },
-    { "media",         AID_MEDIA, },
-    { "dhcp",          AID_DHCP, },
-    { "sdcard_rw",     AID_SDCARD_RW, },
-    { "vpn",           AID_VPN, },
-    { "keystore",      AID_KEYSTORE, },
-    { "usb",           AID_USB, },
-    { "drm",           AID_DRM, },
-    { "mdnsr",         AID_MDNSR, },
-    { "gps",           AID_GPS, },
-    // AID_UNUSED1
-    { "media_rw",      AID_MEDIA_RW, },
-    { "mtp",           AID_MTP, },
-    // AID_UNUSED2
-    { "drmrpc",        AID_DRMRPC, },
-    { "nfc",           AID_NFC, },
-    { "sdcard_r",      AID_SDCARD_R, },
-    { "clat",          AID_CLAT, },
-    { "loop_radio",    AID_LOOP_RADIO, },
-#if defined(QCOM_LEGACY_UIDS)
-    { "qcom_oncrpc",   AID_QCOM_ONCRPC, },
-#endif
-    { "mediadrm",      AID_MEDIA_DRM, },
-    { "package_info",  AID_PACKAGE_INFO, },
-    { "sdcard_pics",   AID_SDCARD_PICS, },
-    { "sdcard_av",     AID_SDCARD_AV, },
-    { "sdcard_all",    AID_SDCARD_ALL, },
-    { "logd",          AID_LOGD, },
-    { "shared_relro",  AID_SHARED_RELRO, },
-    { "dbus",          AID_DBUS, },
-    { "tlsdate",       AID_TLSDATE, },
-    { "mediaex",       AID_MEDIA_EX, },
-    { "audioserver",   AID_AUDIOSERVER, },
-    { "metrics_coll",  AID_METRICS_COLL },
-    { "metricsd",      AID_METRICSD },
-    { "webserv",       AID_WEBSERV },
-    { "debuggerd",     AID_DEBUGGERD, },
-    { "mediacodec",    AID_MEDIA_CODEC, },
-    { "cameraserver",  AID_CAMERASERVER, },
-    { "firewall",      AID_FIREWALL, },
-    { "trunks",        AID_TRUNKS, },
-    { "nvram",         AID_NVRAM, },
-    { "dns",           AID_DNS, },
-    { "dns_tether",    AID_DNS_TETHER, },
-    { "webview_zygote", AID_WEBVIEW_ZYGOTE, },
-    { "vehicle_network", AID_VEHICLE_NETWORK, },
-    { "media_audio",   AID_MEDIA_AUDIO, },
-    { "media_video",   AID_MEDIA_VIDEO, },
-    { "media_image",   AID_MEDIA_IMAGE, },
-
-    { "shell",         AID_SHELL, },
-    { "cache",         AID_CACHE, },
-    { "diag",          AID_DIAG, },
-
-    { "qcom_diag",     AID_QCOM_DIAG, },
-
-    { "net_bt_admin",  AID_NET_BT_ADMIN, },
-    { "net_bt",        AID_NET_BT, },
-    { "inet",          AID_INET, },
-    { "net_raw",       AID_NET_RAW, },
-    { "net_admin",     AID_NET_ADMIN, },
-    { "net_bw_stats",  AID_NET_BW_STATS, },
-    { "net_bw_acct",   AID_NET_BW_ACCT, },
-    { "net_bt_stack",  AID_NET_BT_STACK, },
-    { "readproc",      AID_READPROC, },
-    { "wakelock",      AID_WAKELOCK, },
-#if !defined(QCOM_LEGACY_UIDS)
-    { "ims", AID_IMS, },
-#endif
-#if !defined(QCOM_LEGACY_UIDS)
-    { "sensors",       AID_SENSORS, },
-    { "rfs",           AID_RFS, },
-    { "rfs_shared",    AID_RFS_SHARED, },
-#endif
-#if !defined(QCOM_LEGACY_UIDS)
-    { "rfs_old",           AID_RFS_OLD, },
-    { "rfs_shared_old",    AID_RFS_SHARED_OLD, },
-#endif
-#if defined(MOTOROLA_UIDS)
-    { "mot_osh",   AID_MOT_OSH, },
-    { "mot_accy",  AID_MOT_ACCY, },
-    { "mot_pwric", AID_MOT_PWRIC, },
-    { "mot_usb",   AID_MOT_USB, },
-    { "mot_drm",   AID_MOT_DRM, },
-    { "mot_tcmd",  AID_MOT_TCMD, },
-    { "mot_sec_rtc",   AID_MOT_SEC_RTC, },
-    { "mot_tombstone", AID_MOT_TOMBSTONE, },
-    { "mot_tpapi",     AID_MOT_TPAPI, },
-    { "mot_secclkd",   AID_MOT_SECCLKD, },
-    { "mot_whisper",   AID_MOT_WHISPER, },
-    { "mot_caif",  AID_MOT_CAIF, },
-    { "mot_dlna",  AID_MOT_DLNA, },
-#endif
-    { "everybody",     AID_EVERYBODY, },
-    { "misc",          AID_MISC, },
-    { "nobody",        AID_NOBODY, },
-
-    { "theme_man", AID_THEMEMAN },
-    { "audit",         AID_AUDIT, },
-};
-
-#define android_id_count \
-    (sizeof(android_ids) / sizeof(android_ids[0]))
 
 struct fs_path_config {
     unsigned mode;
