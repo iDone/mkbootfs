@@ -401,6 +401,10 @@ static const struct fs_path_config android_files[] = {
     { 00700, AID_SYSTEM,    AID_SHELL,     CAP_MASK_LONG(CAP_BLOCK_SUSPEND),
                                               "system/bin/inputflinger" },
 
+    /* Support FIFO scheduling mode in SurfaceFlinger. */
+    { 00755, AID_SYSTEM,    AID_GRAPHICS,  CAP_MASK_LONG(CAP_SYS_NICE),
+                                              "system/bin/surfaceflinger" },
+
     /* Support hostapd administering a network interface. */
     { 00755, AID_WIFI,      AID_WIFI,      CAP_MASK_LONG(CAP_NET_ADMIN) |
                                            CAP_MASK_LONG(CAP_NET_RAW),
