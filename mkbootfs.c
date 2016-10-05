@@ -334,6 +334,12 @@ int main(int argc, char *argv[])
         argv += 2;
     }
 
+    if (argc > 1 && strcmp(argv[0], "-v") == 0) {
+        verbose = 1;
+        argc -= 1;
+        argv += 1;
+    }
+
     if(argc == 0) die("no directories to process?!");
 
     while(argc-- > 0){
