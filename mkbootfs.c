@@ -18,7 +18,6 @@
 **
 ** - see buffer-format.txt from the linux kernel docs for
 **   an explanation of this file format
-** - dotfiles are ignored
 ** - directories named 'root' are ignored
 ** - device notes, pipes, etc are not supported (error)
 */
@@ -175,10 +174,9 @@ static void _archive_dir(char *in, char *out, int ilen, int olen)
     }
 
     while((de = readdir(d)) != 0){
-            /* xxx: feature? maybe some dotfiles are okay */
-        if(de->d_name[0] == '.') continue;
-
             /* xxx: hack. use a real exclude list */
+        if(!strcmp(de->d_name, ".")) continue;
+        if(!strcmp(de->d_name, "..")) continue;
         if(!strcmp(de->d_name, "root")) continue;
 
         if (entries >= size) {
