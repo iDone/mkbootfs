@@ -127,6 +127,7 @@
 #define AID_MEDIA_AUDIO   1055 /* GID for audio files on internal media storage */
 #define AID_MEDIA_VIDEO   1056 /* GID for video files on internal media storage */
 #define AID_MEDIA_IMAGE   1057 /* GID for image files on internal media storage */
+#define AID_TOMBSTONED    1058  /* tombstoned user */
 /* Changes to this file must be made in AOSP, *not* in internal branches. */
 
 #define AID_THEMEMAN      1300  /* theme manager */
@@ -372,6 +373,9 @@ static const struct fs_path_config android_files[] = {
                                            CAP_MASK_LONG(CAP_SETPCAP),
                                               "system/bin/webview_zygote64" },
 
+    { 00755, AID_ROOT,      AID_SHELL,     0, "system/bin/crash_dump32" },
+    { 00755, AID_ROOT,      AID_SHELL,     0, "system/bin/crash_dump64" },
+    { 00755, AID_ROOT,      AID_SHELL,     0, "system/bin/debuggerd" },
     { 00750, AID_ROOT,      AID_ROOT,      0, "system/bin/uncrypt" },
     { 00750, AID_ROOT,      AID_ROOT,      0, "system/bin/install-recovery.sh" },
     { 00755, AID_ROOT,      AID_SHELL,     0, "system/bin/*" },
