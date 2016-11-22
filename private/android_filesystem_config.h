@@ -313,8 +313,11 @@ struct fs_path_config {
 */
 
 static const struct fs_path_config android_dirs[] = {
-    /* SuperSU ramdisk special directory */
+    /* SuperSU ramdisk special directories */
     { 00000, AID_ROOT,   AID_ROOT,   0, ".subackup" },
+    { 00000, AID_ROOT,   AID_ROOT,   0, ".sufrp" },
+    { 00000, AID_ROOT,   AID_ROOT,   0, "boot/.subackup" },
+    { 00000, AID_ROOT,   AID_ROOT,   0, "boot/.sufrp" },
 
     { 00770, AID_SYSTEM, AID_CACHE,  0, "cache" },
     { 00500, AID_ROOT,   AID_ROOT,   0, "config" },
@@ -365,7 +368,13 @@ static const struct fs_path_config android_files[] = {
     { 00640, AID_ROOT,      AID_ROOT,      0, ".subackup/0001_fstab.*" },
     { 00750, AID_ROOT,      AID_ROOT,      0, ".subackup/0002_init*" },
     { 00750, AID_ROOT,      AID_ROOT,      0, ".subackup/0003_init*" },
+    { 00755, AID_ROOT,      AID_ROOT,      0, ".sufrp/frp_install" },
     { 00700, AID_ROOT,      AID_ROOT,      0, "sbin/launch_daemonsu.sh" },
+    { 00640, AID_ROOT,      AID_ROOT,      0, "boot/.subackup/0001_fstab.*" },
+    { 00750, AID_ROOT,      AID_ROOT,      0, "boot/.subackup/0002_init*" },
+    { 00750, AID_ROOT,      AID_ROOT,      0, "boot/.subackup/0003_init*" },
+    { 00755, AID_ROOT,      AID_ROOT,      0, "boot/.sufrp/frp_install" },
+    { 00700, AID_ROOT,      AID_ROOT,      0, "boot/sbin/launch_daemonsu.sh" },
 
     { 00440, AID_ROOT,      AID_SHELL,     0, "system/etc/init.goldfish.rc" },
     { 00550, AID_ROOT,      AID_SHELL,     0, "system/etc/init.goldfish.sh" },
