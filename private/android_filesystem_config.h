@@ -93,9 +93,8 @@
 #define AID_FIREWALL      1048  /* firewalld process */
 #define AID_TRUNKS        1049  /* trunksd process (TPM daemon) */
 
-#define AID_AUDIT         1049  /* audit daemon */
-
 #define AID_THEMEMAN      1300  /* theme manager */
+#define AID_AUDIT         1301  /* audit daemon */
 
 #define AID_SHELL         2000  /* adb and debug shell user */
 #define AID_CACHE         2001  /* cache access */
@@ -227,8 +226,6 @@ static const struct android_id_info android_ids[] = {
     { "firewall",      AID_FIREWALL, },
     { "trunks",        AID_TRUNKS, },
 
-    { "audit",         AID_AUDIT, },
-
     { "shell",         AID_SHELL, },
     { "cache",         AID_CACHE, },
     { "diag",          AID_DIAG, },
@@ -272,6 +269,7 @@ static const struct android_id_info android_ids[] = {
     { "nobody",        AID_NOBODY, },
 
     { "theme_man", AID_THEMEMAN },
+    { "audit",         AID_AUDIT, },
 };
 
 #define android_id_count \
