@@ -27,7 +27,7 @@
 #include <sys/types.h>
 #include <stdint.h>
 
-#ifdef HAVE_ANDROID_OS
+#if defined(__ANDROID__)
 #include <linux/capability.h>
 #else
 #include "android_filesystem_capability.h"
