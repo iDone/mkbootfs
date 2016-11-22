@@ -98,7 +98,9 @@ static void _eject(struct stat *s, char *out, int olen, char *data, unsigned dat
     }
 
     fix_stat(out, s);
-//    fprintf(stderr, "_eject %s: mode=0%o\n", out, s->st_mode);
+    if(verbose) {
+        fprintf(stderr, "_eject %s: mode=0%o\n", out, s->st_mode);
+    }
 
     printf("%06x%08x%08x%08x%08x%08x%08x"
            "%08x%08x%08x%08x%08x%08x%08x%s%c",
