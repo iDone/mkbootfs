@@ -468,7 +468,7 @@ static const struct fs_path_config android_files[] = {
     { 00644, AID_ROOT,      AID_ROOT,      0, 0 },
 };
 
-static inline void fs_config(const char *path, int dir,
+static inline void fs_config(const char *path, int dir, const char *target_out_path,
                              long unsigned *uid, long unsigned *gid, unsigned *mode, uint64_t *capabilities)
 {
     const struct fs_path_config *pc;
