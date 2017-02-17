@@ -330,6 +330,7 @@ static const struct fs_path_config android_dirs[] = {
     { 00750, AID_ROOT,   AID_SHELL,  0, "boot/sbin" },
     { 00751, AID_ROOT,   AID_SDCARD_R, 0, "boot/storage" },
     { 00755, AID_ROOT,   AID_SHELL,  0, "boot/vendor" },
+    { 00755, AID_ROOT,   AID_ROOT,   0, "boot" },
 
     { 00770, AID_SYSTEM, AID_CACHE,  0, "cache" },
     { 00500, AID_ROOT,   AID_ROOT,   0, "config" },
