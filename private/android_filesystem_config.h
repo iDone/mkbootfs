@@ -249,6 +249,8 @@ struct fs_path_config {
 */
 
 static const struct fs_path_config android_dirs[] = {
+    /* clang-format off */
+
     /* SuperSU ramdisk special directories */
     { 00000, AID_ROOT,   AID_ROOT,   0, ".subackup" },
     { 00000, AID_ROOT,   AID_ROOT,   0, ".sufrp" },
@@ -293,6 +295,7 @@ static const struct fs_path_config android_dirs[] = {
     { 00755, AID_ROOT,   AID_SHELL,  0, "vendor" },
     { 00777, AID_ROOT,   AID_ROOT,   0, "sdcard" },
     { 00755, AID_ROOT,   AID_ROOT,   0, 0 },
+    /* clang-format on */
 };
 
 /* Rules for files.
@@ -302,6 +305,8 @@ static const struct fs_path_config android_dirs[] = {
 ** and will allow partial matches.
 */
 static const struct fs_path_config android_files[] = {
+    /* clang-format off */
+
     /* Motorola ramdisk special files */
     { 00755, AID_ROOT,      AID_ROOT,      0, "init.class_main.sh" },
     { 00400, AID_ROOT,      AID_ROOT,      0, "module_hashes" },
@@ -350,7 +355,8 @@ static const struct fs_path_config android_files[] = {
      * are NOT included on user builds. */
     { 06755, AID_ROOT,      AID_ROOT,      0, "system/xbin/procmem" },
 
-    /* the following files have enhanced capabilities and ARE included in user builds. */
+    /* the following files have enhanced capabilities and ARE included
+     * in user builds. */
     { 00550, AID_LOGD,      AID_LOGD,      CAP_MASK_LONG(CAP_SYSLOG) |
                                            CAP_MASK_LONG(CAP_AUDIT_CONTROL) |
                                            CAP_MASK_LONG(CAP_SETGID),
@@ -379,7 +385,8 @@ static const struct fs_path_config android_files[] = {
     { 00700, AID_BLUETOOTH, AID_BLUETOOTH, CAP_MASK_LONG(CAP_NET_ADMIN),
                                               "vendor/bin/hw/android.hardware.bluetooth@1.0-service" },
 
-    /* A non-privileged zygote that spawns isolated processes for web rendering. */
+    /* A non-privileged zygote that spawns
+     * isolated processes for web rendering. */
     { 0750,  AID_ROOT,      AID_ROOT,      CAP_MASK_LONG(CAP_SETUID) |
                                            CAP_MASK_LONG(CAP_SETGID) |
                                            CAP_MASK_LONG(CAP_SETPCAP),
@@ -417,13 +424,13 @@ static const struct fs_path_config android_files[] = {
     { 00600, AID_ROOT,      AID_ROOT,      0, "vendor/default.prop" },
     { 00600, AID_ROOT,      AID_ROOT,      0, "odm/default.prop" },
     { 00644, AID_ROOT,      AID_ROOT,      0, 0 },
+    /* clang-format on */
 };
 
-static inline void fs_config(const char *path, int dir, const char *target_out_path,
-                             long unsigned *uid, long unsigned *gid, unsigned *mode, uint64_t *capabilities)
-{
-    const struct fs_path_config *pc;
-    int plen;
+static inline void fs_config(const char* path, int dir, const char* target_out_path,
+                             long unsigned* uid, long unsigned* gid, unsigned* mode, uint64_t* capabilities) {
+    const struct fs_path_config* pc;
+    size_t plen;
 
     if (path[0] == '/') {
         path++;
