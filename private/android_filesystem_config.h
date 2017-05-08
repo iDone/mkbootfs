@@ -167,12 +167,14 @@
 #if defined(QCOM_LEGACY_UIDS)
 #define AID_QCOM_ONCRPC   3011  /* can read/write /dev/oncrpc files */
 #define AID_QCOM_DIAG     3012  /* can read/write /dev/diag */
-#else
+#elif defined(QCOM_UIDS)
 #define AID_SENSORS       3011  /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
 #define AID_IMS           3012  /* can read/write /dev/socket/imsrtp */
 
 #define AID_RFS_OLD          3013  /* DEPRECATED OLD ID FOR RFS, DO NOT USE */
 #define AID_RFS_SHARED_OLD   3014  /* DEPRECATED OLD ID FOR RFS-SHARED  */
+#else
+#define AID_UHID          3011  /* Allow read/write to /dev/uhid node */
 #endif
 
 /* The range 5000-5999 is also reserved for OEM, and must never be used here. */
