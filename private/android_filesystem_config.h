@@ -131,6 +131,7 @@
 #define AID_MEDIA_OBB     1059  /* GID for OBB files on internal media storage */
 #define AID_ESE           1060  /* embedded secure element (eSE) subsystem */
 #define AID_OTA_UPDATE    1061  /* resource tracking UID for OTA updates */
+#define AID_AUTOMOTIVE_EVS 1062  /* Automotive rear and surround view system */
 /* Changes to this file must be made in AOSP, *not* in internal branches. */
 
 #define AID_THEMEMAN      1300  /* theme manager */
