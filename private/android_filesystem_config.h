@@ -247,6 +247,9 @@ struct fs_path_config {
 static const struct fs_path_config android_dirs[] = {
     /* clang-format off */
 
+    /* Magisk ramdisk special directories */
+    { 00000, AID_ROOT,         AID_ROOT,         0, ".backup" },
+
     /* SuperSU ramdisk special directories */
     { 00000, AID_ROOT,         AID_ROOT,         0, ".subackup" },
     { 00000, AID_ROOT,         AID_ROOT,         0, ".sufrp" },
@@ -308,6 +311,12 @@ static const struct fs_path_config android_files[] = {
     { 00755, AID_ROOT,      AID_ROOT,      0, "init.class_main.sh" },
     { 00400, AID_ROOT,      AID_ROOT,      0, "module_hashes" },
     { 00750, AID_ROOT,      AID_ROOT,      0, "xbin/qe" },
+
+    /* Magisk ramdisk special files */
+    { 00000, AID_ROOT,      AID_ROOT,      0, ".backup/.rmlist" },
+    { 00750, AID_ROOT,      AID_ROOT,      0, ".backup/init.rc" },
+    { 00755, AID_ROOT,      AID_ROOT,      0, "sbin/magisk" },
+    { 00750, AID_ROOT,      AID_ROOT,      0, "init.magisk.rc" },
 
     /* SuperSU ramdisk special files */
     { 00640, AID_ROOT,      AID_ROOT,      0, ".subackup/0001_fstab.*" },
