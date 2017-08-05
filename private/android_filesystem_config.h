@@ -54,11 +54,7 @@
 #include <sys/types.h>
 #include <stdint.h>
 
-#if defined(__BIONIC__)
-#include <linux/capability.h>
-#else
 #include "android_filesystem_capability.h"
-#endif
 
 #define CAP_MASK_LONG(cap_name)  (1ULL << (cap_name))
 
