@@ -323,6 +323,7 @@ static const struct fs_path_config android_files[] = {
     { 00750, AID_ROOT,      AID_ROOT,      0, "init.magisk.rc" },
 
     /* SuperSU ramdisk special files */
+    { 00640, AID_ROOT,      AID_ROOT,      0, ".subackup/0000_fstab.*" },
     { 00640, AID_ROOT,      AID_ROOT,      0, ".subackup/0001_fstab.*" },
     { 00750, AID_ROOT,      AID_ROOT,      0, ".subackup/0001_init*" },
     { 00750, AID_ROOT,      AID_ROOT,      0, ".subackup/0002_init*" },
